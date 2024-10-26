@@ -11,6 +11,7 @@ int nom = 0;
 
 void debit(int x);
 void add(int y);
+void paywithloan(int z);
 
 string func = "";
 
@@ -29,6 +30,16 @@ int main() {
         }
         else if (func == "exit") {
             return 0;
+        }
+        else if (func == "add") {
+            cout << "Enter Amount: ";
+            cin >> nom;
+            add(nom);
+        }
+        else if (func == "paywithloan") {
+            cout << "Enter Amount: ";
+            cin >> nom;
+            paywithloan(nom);
         }
         cout << "Player 1 Balance: " << p1 << "\n";
         cout << "Player 2 Balance: " << p2 << "\n";
@@ -91,4 +102,23 @@ void add(int y) {
     else if (p == 4) {
         p4 += y;
     }
+}
+
+void paywithloan(int z){
+    cout << "Enter Player Number: ";
+    cin >> p;
+    if (p == 1) {
+        p1 -= z;
+    }
+    else if (p == 2) {
+        p2 -= z;
+    }
+    else if (p == 3) {
+        p3 -= z;
+    }
+    else if (p == 4) {
+        p4 -= z;
+    }
+    cout << "Player " << p << " Paid with a loan\n";
+
 }
