@@ -51,13 +51,28 @@ void debit(int x) {
         }
     }
     else if (p == 2) {
-        p2 -= x;
+        if (p2 - x < 0){
+            cout << "Card Declined\n";
+        }
+        else {
+            p2 -= x;
+        }
     }
     else if (p == 3) {
-        p3 -= x;
+        if (p3 - x < 0){
+            cout << "Card Declined\n";
+        }
+        else {
+            p3 -= x;
+        }
     }
     else if (p == 4) {
-        p4 -= x;
+        if (p4 - x < 0){
+            cout << "Card Declined\n";
+        }
+        else {
+            p4 -= x;
+        }
     }
 }
 
