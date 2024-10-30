@@ -6,12 +6,14 @@ int p1 = 1000;
 int p2 = 1000;
 int p3 = 1000;
 int p4 = 1000;
+int o1,o2,o3,o4 = 0;
 int p = 0;
 int nom = 0;
 
 void debit(int x);
 void add(int y);
 void paywithloan(int z);
+void paydebt(int a);
 
 string func = "";
 
@@ -40,6 +42,11 @@ int main() {
             cout << "Enter Amount: ";
             cin >> nom;
             paywithloan(nom);
+        }
+        else if (func == "paydebt") {
+            cout << "Enter Amount: ";
+            cin >> nom;
+            paydebt(nom);
         }
         cout << "Player 1 Balance: " << p1 << "\n";
         cout << "Player 2 Balance: " << p2 << "\n";
@@ -109,16 +116,37 @@ void paywithloan(int z){
     cin >> p;
     if (p == 1) {
         p1 -= z;
+        o1 += z;
     }
     else if (p == 2) {
         p2 -= z;
+        o2 += z;
     }
     else if (p == 3) {
         p3 -= z;
+        o3 += z;
     }
     else if (p == 4) {
         p4 -= z;
+        o4 += z;
     }
     cout << "Player " << p << " Paid with a loan\n";
+    
+}
 
+void paydebt(int a) {
+    cout << "Enter Player Number: ";
+    cin >> p;
+    if (p == 1) {
+        o1 -= a;
+    }
+    else if (p == 2) {
+        o2 -= a;
+    }
+    else if (p == 3) {
+        o3 -= a;
+    }
+    else if (p == 4) {
+        o4 -= a;
+    }
 }
