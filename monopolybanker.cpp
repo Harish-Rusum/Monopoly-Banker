@@ -14,6 +14,7 @@ void debit(int x);
 void add(int y);
 void paywithloan(int z);
 void paydebt(int a);
+void checkdebt(int b);
 
 string func = "";
 
@@ -25,7 +26,7 @@ int main() {
     while (true) {
         cout << "Enter the Action: ";
         cin >> func;
-        if (func == "debit") {
+        if (func == "pay") {
             cout << "Enter Amount: ";
             cin >> nom;
             debit(nom);
@@ -47,11 +48,18 @@ int main() {
             cout << "Enter Amount: ";
             cin >> nom;
             paydebt(nom);
+        }    
+        else if (func == "checkdebt") {
+            cout << "Enter Player Number: ";
+            cin >> nom;
+            checkdebt(nom);
         }
-        cout << "Player 1 Balance: " << p1 << "\n";
-        cout << "Player 2 Balance: " << p2 << "\n";
-        cout << "Player 3 Balance: " << p3 << "\n";
-        cout << "Player 4 Balance: " << p4 << "\n";
+        else if (func == "balance") {
+            cout << "Player 1 Balance: " << p1 << "\n";
+            cout << "Player 2 Balance: " << p2 << "\n";
+            cout << "Player 3 Balance: " << p3 << "\n";
+            cout << "Player 4 Balance: " << p4 << "\n";
+        }
         }   
     return 0;
     }
@@ -150,3 +158,19 @@ void paydebt(int a) {
         o4 -= a;
     }
 }
+
+void checkdebt(int b) {
+    if (b == 1) {
+        cout  << o1 << "\n";  
+    }
+    else if (b == 2) {
+        cout << o2 << "\n";  
+    }
+    else if (b == 3) {
+        cout << o3 << "\n";  
+    }
+    else if (b == 4) {
+        cout << o4 << "\n";  
+    }
+}
+
